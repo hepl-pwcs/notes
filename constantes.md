@@ -26,22 +26,31 @@ Du coup, nous ne pouvons pas utiliser le mot-clé `const` pour déclarer des con
   }
 ?>
 ```
-`const` accepte un scalaire statique (nombre, chaîne de caractères ou autres constantes comme `true`, `false`, `null`, `__FILE__`, etc. ), alors que `define()` prend n’importe quelle expression.
+Une autre conséquence liée au moment de la définition de la constante est que `const` accepte un scalaire statique (nombre, chaîne de caractères ou autres constantes comme `true`, `false`, `null`, `__FILE__`, etc. ), alors que `define()` prend n’importe quelle expression.
 
 Les constantes définies avec `const` sont toujours sensibles à la casse, alors que `define()` vous permet de contrôle cet aspect grâce à son troisième argument, booléen.
 
 `const` peut être utilisé au sein d’une classe ou d’une interface pour déclarer une constante de classe ou une constante d’interface, alors que `define()` ne peut pas être utilisé pour cette raison.
     
+
 ```php
 <?php
 class Abc{
-	const FOO = 'bar' ; // valide
-	echo FOO ; // valide
+	const FOO = 'bar' ; // Valide
+  public static function getFoo()
+  {
+    return self::FOO; // Valide
+  }	
 }
+
 // mais
-class Xyz{
-	define('FOO', 'bar') ; // invalide
-	echo FOO; // invalide
+
+class Abc{
+	define('FOO', 'bar') ; // Invalide
+	public static function getFoo()
+  {
+    return self::FOO; // Invalide
+  }
 }
 ?>
 ```
