@@ -19,10 +19,11 @@ Du coup, nous ne pouvons pas utiliser le mot-clé `const` pour déclarer des con
 ```php
 <?php
   if(bool){
-      const FOO = 'bar' ; // invalide
+      const FOO = 'bar' ; // Invalide
   }
+
   if(bool){
-    define('FOO', 'bar') ; //valide
+    define('FOO', 'bar') ; // Valide
   }
 ?>
 ```
