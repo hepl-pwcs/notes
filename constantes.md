@@ -1,4 +1,6 @@
-nous le savons, `define()` et ` const` sont utilisés pour déclarer une constante dans un script PHP.
+# Constantes
+
+Nous le savons, `define()` et ` const` sont utilisés pour déclarer des constantes dans un script PHP.
 
 Syntaxe
 
